@@ -14,9 +14,9 @@ function getComputersChoice() {
   return computersChoice;
 }
 
-function playOneRound() {
-  let playersChoice = prompt('Choose: rock paper or scissors');
-  console.log(`You picked ${playersChoice}`);
+// Plays one round
+function playOneRound(playersChoice) {
+  playersChoice = prompt('Choose: rock paper or scissors');
   if (
     playersChoice !== 'rock' &&
     playersChoice !== 'paper' &&
@@ -28,15 +28,29 @@ function playOneRound() {
   let computersChoice = getComputersChoice();
   if (playersChoice === computersChoice) {
     console.log('DRAW !');
+    return;
   } else if (
     (playersChoice === 'rock' && computersChoice === 'scissors') ||
     (playersChoice === 'paper' && computersChoice === 'rock') ||
     (playersChoice === 'scissors' && computersChoice === 'paper')
   ) {
+    let playerWin = 'You WIN';
     console.log('YOU WIN!');
-    return;
+    playerScore++;
+    return playerWin;
   } else {
+    let computerWin = 'You lost';
     console.log('YOU LOST!');
-    return;
+    computerScore++;
+    return computerWin;
+    // return computerWin;
   }
 }
+function game() {
+  for (let i = 0; playerScore < 5 && computerScore < 5; i++) {
+    playOneRound();
+    console.log(`Players score: ${playerScore}`);
+    console.log(`Computers score: ${computerScore}`);
+  }
+}
+game();
