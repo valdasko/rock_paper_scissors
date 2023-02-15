@@ -25,8 +25,18 @@ function playOneRound() {
     console.log('wrong input');
     return;
   }
-  if (playersChoice === getComputersChoice()) {
+  let computersChoice = getComputersChoice();
+  if (playersChoice === computersChoice) {
     console.log('DRAW !');
+  } else if (
+    (playersChoice === 'rock' && computersChoice === 'scissors') ||
+    (playersChoice === 'paper' && computersChoice === 'rock') ||
+    (playersChoice === 'scissors' && computersChoice === 'paper')
+  ) {
+    console.log('YOU WIN!');
+    return;
+  } else {
+    console.log('YOU LOST!');
+    return;
   }
 }
-playOneRound();
