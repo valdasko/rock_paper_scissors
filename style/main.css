@@ -35,3 +35,12 @@ body {
 h1 { 
   font-size: 3rem;
 }
+
+.playersPicks {
+  display: flex;
+  justify-content: space-between;
+}
+.playersScores {
+  display: flex;
+  justify-content: space-between;
+}

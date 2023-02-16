@@ -17,17 +17,37 @@
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap"
       rel="stylesheet"
     />
-    <script src="js/script.js"></script>
     <link rel="stylesheet" href="style/main.css" />
+    <script src="js/script.js" defer></script>
   </head>
   <body>
     <div class="container">
       <h1>Rock Paper Scissors</h1>
-      <h2 class="roundResult"></h2>
+      <h2 id="roundResult">Round result</h2>
       <div id="gameDiv" class="gameContainer">
-        <h2 class="gameText" id="playerText">Player's choice:</h2>
-        <h2 class="gameText" id="computerText">Computer's choice:</h2>
-        <h2 class="gameText" id="resultText">Result:</h2>
+        <div class="playersPicks">
+          <h2 class="gameText" id="playerText">
+            Player's choice: <span id="playersPick"></span>
+          </h2>
+          <h2 class="gameText" id="computerText">
+            Computer's choice: <span id="computersPick"></span>
+          </h2>
+        </div>
+        <div class="playersScores">
+          <div>
+            <h2 class="gameText" id="resultText">
+              Player:
+              <span id="playerResult">0</span>
+            </h2>
+          </div>
+          <div>
+            <h2 class="gameText" id="resultText">
+              Computer:
+              <span id="computerResult">0</span>
+            </h2>
+          </div>
+        </div>
+
         <button id="rockBtn" class="choiceBtn">Rock</button>
         <button id="paperBtn" class="choiceBtn">Paper</button>
         <button id="scissorsBtn" class="choiceBtn">Scissors</button>
