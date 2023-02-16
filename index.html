@@ -5,16 +5,33 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Rock Paper Scissors</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lobster+Two:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
     <script src="js/script.js"></script>
+    <link rel="stylesheet" href="style/main.css" />
   </head>
   <body>
-    <div id="gameDiv">
-      <h1 class="gameText" id="playerText">Player:</h1>
-      <h1 class="gameText" id="computerText">Computer:</h1>
-      <h1 class="gameText" id="resultText">Result:</h1>
-      <button id="rockBtn" class="choiceBtn">ROCK</button>
-      <button id="paperBtn class="choiceBtn">PAPER</button>
-      <button id="scissorsBtn class="choiceBtn">SCISSORS</button>
+    <div class="container">
+      <h1>Rock Paper Scissors</h1>
+      <h2 class="roundResult"></h2>
+      <div id="gameDiv" class="gameContainer">
+        <h2 class="gameText" id="playerText">Player's choice:</h2>
+        <h2 class="gameText" id="computerText">Computer's choice:</h2>
+        <h2 class="gameText" id="resultText">Result:</h2>
+        <button id="rockBtn" class="choiceBtn">Rock</button>
+        <button id="paperBtn" class="choiceBtn">Paper</button>
+        <button id="scissorsBtn" class="choiceBtn">Scissors</button>
+      </div>
     </div>
   </body>
 </html>
