@@ -25,6 +25,7 @@ function playOneRound(playersChoice) {
   computerText.textContent = computersChoice;
   if (playersChoice === computersChoice) {
     roundResultEl.textContent = 'Draw';
+    roundResultEl.style.color = 'yellow';
     return;
   } else if (
     (playersChoice === 'rock' && computersChoice === 'scissors') ||
@@ -33,12 +34,14 @@ function playOneRound(playersChoice) {
   ) {
     let playerWin = 'You WIN';
     roundResultEl.textContent = 'Player Win';
+    roundResultEl.style.color = 'green';
     playerScore++;
     playerResult.textContent = playerScore.toString();
     return playerWin;
   } else {
     let computerWin = 'Computer WIN';
     roundResultEl.textContent = 'You lost. Computer win';
+    roundResultEl.style.color = 'red';
     computerScore++;
     computerResult.textContent = computerScore.toString();
     return computerWin;
