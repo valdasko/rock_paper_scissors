@@ -17,13 +17,20 @@
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"
+      integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <link rel="stylesheet" href="style/main.css" />
     <script src="js/script.js" defer></script>
   </head>
   <body>
     <div class="container">
       <h1>Rock Paper Scissors</h1>
-      <h2 id="roundResult" class="round__result">Round result</h2>
+      <h2 id="roundResult" class="round__result">Press button and play</h2>
       <div id="gameDiv" class="gameContainer">
         <div class="playersPicks">
           <h2 class="gameText green" id="playerText">
@@ -41,16 +48,22 @@
             </h2>
           </div>
           <div>
-            <h2 class="gameText dark" id="resultText">
+            <h2 class="gameText" id="resultText">
               Computer:
               <span class="red" id="computerResult">0</span>
             </h2>
           </div>
         </div>
 
-        <button id="rockBtn" class="choiceBtn">Rock</button>
-        <button id="paperBtn" class="choiceBtn">Paper</button>
-        <button id="scissorsBtn" class="choiceBtn">Scissors</button>
+        <button id="rockBtn" class="choiceBtn">
+          <i class="fa fa-hand-rock-o" aria-hidden="true"></i>
+        </button>
+        <button id="paperBtn" class="choiceBtn">
+          <i class="fa fa-hand-paper-o" aria-hidden="true"></i>
+        </button>
+        <button id="scissorsBtn" class="choiceBtn">
+          <i class="fa fa-hand-scissors-o" aria-hidden="true"></i>
+        </button>
       </div>
     </div>
   </body>

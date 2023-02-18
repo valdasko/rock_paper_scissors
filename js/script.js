@@ -14,7 +14,7 @@ let computersChoice;
 
 // Computer chooses 1 random option
 function getComputersChoice() {
-  let computerOptions = ['rock', 'paper', 'scissors'];
+  let computerOptions = ['Rock', 'Paper', 'Scissors'];
   computersChoice =
     computerOptions[Math.floor(Math.random() * computerOptions.length)];
   return computersChoice;
@@ -28,9 +28,9 @@ function playOneRound(playersChoice) {
     roundResultEl.style.color = 'yellow';
     return;
   } else if (
-    (playersChoice === 'rock' && computersChoice === 'scissors') ||
-    (playersChoice === 'paper' && computersChoice === 'rock') ||
-    (playersChoice === 'scissors' && computersChoice === 'paper')
+    (playersChoice === 'Rock' && computersChoice === 'Scissors') ||
+    (playersChoice === 'Paper' && computersChoice === 'Rock') ||
+    (playersChoice === 'Scissors' && computersChoice === 'Paper')
   ) {
     let playerWin = 'You WIN';
     roundResultEl.textContent = 'Player Win';
@@ -54,15 +54,15 @@ let scissorsBtn = document.getElementById('scissorsBtn');
 
 rockBtn.addEventListener('click', () => {
   playerText.textContent = 'Rock';
-  playOneRound('rock');
+  playOneRound('Rock');
 });
 
 paperBtn.addEventListener('click', () => {
   playerText.textContent = 'Paper';
-  playOneRound('paper');
+  playOneRound('Paper');
 });
 
 scissorsBtn.addEventListener('click', () => {
   playerText.textContent = 'Scissors';
-  playOneRound('scissors');
+  playOneRound('Scissors');
 });
