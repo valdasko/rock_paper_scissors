@@ -6,10 +6,15 @@ const playerText = document.getElementById('playersPick');
 const computerText = document.getElementById('computersPick');
 const playerResult = document.getElementById('playerResult');
 const computerResult = document.getElementById('computerResult');
+const gameWinnerEl = document.getElementById('gameWinner');
 
-let playerScore = '0';
-let computerScore = '0';
-let round = '0';
+// const playAgainBtn = document.createElement('button');
+// playAgainBtn.textContent = 'Play Again?';
+// gameWinnerEl.after(playAgainBtn);
+
+let playerScore = 0;
+let computerScore = 0;
+let round = 0;
 let computersChoice;
 
 // Computer chooses 1 random option
@@ -19,6 +24,8 @@ function getComputersChoice() {
     computerOptions[Math.floor(Math.random() * computerOptions.length)];
   return computersChoice;
 }
+// if (computerScore === 5 || playerScore === 5) {
+//   alert('Game Over');
 
 function playOneRound(playersChoice) {
   computersChoice = getComputersChoice();
@@ -37,32 +44,61 @@ function playOneRound(playersChoice) {
     roundResultEl.style.color = 'green';
     playerScore++;
     playerResult.textContent = playerScore.toString();
-    return playerWin;
+    if (playerScore === 5) {
+      roundResultEl.textContent = 'Game Over. Player Won';
+    } else {
+      return playerScore;
+    }
   } else {
-    let computerWin = 'Computer WIN';
-    roundResultEl.textContent = 'You lost. Computer win';
+    // let computerWin = 'Computer WIN';
+    roundResultEl.textContent = 'You lost';
     roundResultEl.style.color = 'red';
     computerScore++;
     computerResult.textContent = computerScore.toString();
-    return computerWin;
+    if (computerScore === 5) {
+      roundResultEl.textContent = 'Game Over. Computer Won';
+    } else return computerScore;
   }
 }
 
 let rockBtn = document.getElementById('rockBtn');
 let paperBtn = document.getElementById('paperBtn');
 let scissorsBtn = document.getElementById('scissorsBtn');
+let resetBtn = document.getElementById('resetBtn');
 
 rockBtn.addEventListener('click', () => {
-  playerText.textContent = 'Rock';
-  playOneRound('Rock');
+  if (playerScore === 5 || computerScore === 5) {
+    alert('Press Play again');
+  } else {
+    playerText.textContent = 'Rock';
+    playOneRound('Rock');
+  }
 });
 
 paperBtn.addEventListener('click', () => {
-  playerText.textContent = 'Paper';
-  playOneRound('Paper');
+  if (playerScore === 5 || computerScore === 5) {
+    alert('Press Play again');
+  } else {
+    playerText.textContent = 'Paper';
+    playOneRound('Paper');
+  }
 });
 
 scissorsBtn.addEventListener('click', () => {
-  playerText.textContent = 'Scissors';
-  playOneRound('Scissors');
+  if (playerScore === 5 || computerScore === 5) {
+    alert('Press Play again');
+  } else {
+    playerText.textContent = 'Scissors';
+    playOneRound('Scissors');
+  }
+});
+
+resetBtn.addEventListener('click', () => {
+  playerScore = 0;
+  computerScore = 0;
+  round = 0;
+  playerResult.textContent = playerScore;
+  computerResult.textContent = computerScore;
+  roundResultEl.textContent = 'Can you beat the computer?';
+  roundResultEl.style.color = 'white';
 });

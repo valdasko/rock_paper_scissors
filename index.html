@@ -30,7 +30,8 @@
   <body>
     <div class="container">
       <h1>Rock Paper Scissors</h1>
-      <h2 id="roundResult" class="round__result">Press button and play</h2>
+      <h2 id="roundResult" class="round__result">Can you beat the computer?</h2>
+      <h2 id="gameWinner"></h2>
       <div id="gameDiv" class="gameContainer">
         <div class="playersPicks">
           <h2 class="gameText green" id="playerText">
@@ -54,7 +55,6 @@
             </h2>
           </div>
         </div>
-
         <button id="rockBtn" class="choiceBtn">
           <i class="fa fa-hand-rock-o" aria-hidden="true"></i>
         </button>
@@ -64,6 +64,7 @@
         <button id="scissorsBtn" class="choiceBtn">
           <i class="fa fa-hand-scissors-o" aria-hidden="true"></i>
         </button>
+        <button id="resetBtn" class="play-again-btn">Play again?</button>
       </div>
     </div>
   </body>
