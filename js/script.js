@@ -24,8 +24,6 @@ function getComputersChoice() {
     computerOptions[Math.floor(Math.random() * computerOptions.length)];
   return computersChoice;
 }
-// if (computerScore === 5 || playerScore === 5) {
-//   alert('Game Over');
 
 function playOneRound(playersChoice) {
   computersChoice = getComputersChoice();
@@ -39,18 +37,16 @@ function playOneRound(playersChoice) {
     (playersChoice === 'Paper' && computersChoice === 'Rock') ||
     (playersChoice === 'Scissors' && computersChoice === 'Paper')
   ) {
-    let playerWin = 'You WIN';
     roundResultEl.textContent = 'Player Win';
     roundResultEl.style.color = 'green';
     playerScore++;
-    playerResult.textContent = playerScore.toString();
+    playerResult.textContent = playerScore;
     if (playerScore === 5) {
       roundResultEl.textContent = 'Game Over. Player Won';
     } else {
       return playerScore;
     }
   } else {
-    // let computerWin = 'Computer WIN';
     roundResultEl.textContent = 'You lost';
     roundResultEl.style.color = 'red';
     computerScore++;
@@ -101,4 +97,6 @@ resetBtn.addEventListener('click', () => {
   computerResult.textContent = computerScore;
   roundResultEl.textContent = 'Can you beat the computer?';
   roundResultEl.style.color = 'white';
+  playerText.textContent = '';
+  computerText.textContent = '';
 });
