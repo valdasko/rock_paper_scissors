@@ -8,10 +8,6 @@ const playerResult = document.getElementById('playerResult');
 const computerResult = document.getElementById('computerResult');
 const gameWinnerEl = document.getElementById('gameWinner');
 
-// const playAgainBtn = document.createElement('button');
-// playAgainBtn.textContent = 'Play Again?';
-// gameWinnerEl.after(playAgainBtn);
-
 let playerScore = 0;
 let computerScore = 0;
 let round = 0;
